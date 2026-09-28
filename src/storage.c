@@ -58,7 +58,6 @@ bool do_umount()
 
 void out()
 {
-	system("clear");
 	printf("Choose action\n\n[1] - Copy from USB\n[2] - Move from USB\n[3] - Copy to USB\n[4] - Move to USB\n[5] - Delete local storage directory\n[6] - Format USB\n[7] - Rename local storage directory\n[0] - Quit programm\n\n");
 }
 
@@ -81,15 +80,16 @@ int main()
 	}
 
 	fclose(fp);
+	system("clear");
 
 	while (true)
 	{
 
 		out();
 
-		unsigned int act;
+		unsigned int act = 0;
 	
-		scanf("&u", &act);
+		scanf("%u", &act);
 	
 		switch(act)
 		{
@@ -100,7 +100,7 @@ int main()
 				char i;
 	
 				printf("Do you want to COPY ALL to your storage?\n[y]es/[n]o\n\n");
-				scanf("%c", &i);
+				scanf(" %c", &i);
 	
 				if (toupper(i) == 'Y')
 				{
@@ -117,6 +117,9 @@ int main()
 					strcat(cp, name);
 
 					system(create);
+
+					printf("Coping...\n");
+
 					system(cp);
 
 					break;
@@ -151,6 +154,9 @@ int main()
 					strcat(mv, name);
 
 					system(create);
+
+					printf("Moving...\n");
+
 					system(mv);
 
 					break;
@@ -170,11 +176,13 @@ int main()
 	
 				scanf("%s", name);
 
-				char cp [100] = "sudo cp -r ~/strorage/";
+				char cp [100] = "sudo cp -r ~/storage/";
 				char res [6] = " /mnt";
 
 				strcat(cp, name);
 				strcat(cp, res);
+
+				printf("Copying...\n");
 
 				int i = system(cp);
 				if (i != 0)
@@ -193,11 +201,13 @@ int main()
 	
 				scanf("%s", name);
 
-				char mv [100] = "sudo mv * ~/strorage/";
+				char mv [100] = "sudo mv * ~/storage/";
 				char res [6] = " /mnt";
 
 				strcat(mv, name);
 				strcat(mv, res);
+
+				printf("Moving...\n");
 
 				int i = system(mv);
 				if (i != 0)
@@ -216,9 +226,11 @@ int main()
 	
 				scanf("%s", name);
 
-				char mv [100] = "mv -r ~/strorage/";
+				char mv [100] = "rm -r ~/storage/";
 
 				strcat(mv, name);
+
+				printf("Deleting...\n");
 
 				int i = system(mv);
 				if (i != 0)
@@ -238,6 +250,7 @@ int main()
 
 				if (toupper(i) == 'Y')
 				{
+					printf("Formating...");
 					system(mnt);
 					system("sudo rm -r ./*");
 
@@ -288,6 +301,8 @@ int main()
 			}
 			case(0):
 			{
+				printf("Exiting...\n");
+				do_umount();
 				exit(0);
 				break;
 			}

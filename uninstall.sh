@@ -6,17 +6,17 @@ read -n 1 ANS
 echo
 if [ ${ANS} == "y" ]; then
 		if [ -e "../storage" ]; then
-			rm -r ~/storage/
+			sudo rm -rf ~/storage/
 			echo -e "'~/storage/' directory was deleted"
 		fi
 
 		if [ -e "storage" ]; then
-			rm storage
+			rm -f storage
 			echo -e "'storage' program was deleted"
 		fi
 
 		if [ -e "usbdevice" ]; then
-			rm usbdevice
+			rm -f usbdevice
 			echo -e "'usbdevice' file was deleted"
 		fi
 
