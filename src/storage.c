@@ -201,8 +201,8 @@ int main()
 	
 				scanf("%s", name);
 
-				char mv [100] = "sudo mv * ~/storage/";
-				char res [6] = " /mnt";
+				char mv [100] = "sudo mv ~/storage/";
+				char res [6] = "* /mnt";
 
 				strcat(mv, name);
 				strcat(mv, res);
