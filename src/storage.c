@@ -250,9 +250,8 @@ int main()
 
 				if (toupper(i) == 'Y')
 				{
-					printf("Formating...");
-					system(mnt);
-					system("sudo rm -r ./*");
+					printf("Formating...\n");
+					system("sudo rm -r /mnt/*");
 
 					printf("Your USB device was formated successfuly\n");
 				}
