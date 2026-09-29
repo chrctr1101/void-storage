@@ -137,7 +137,7 @@ int main()
 				char i;
 
 				printf("Do you want to MOVE ALL to your storage?\n[y]es/[n]o\n\n");
-				scanf("%c", &i);
+				scanf(" %c", &i);
 	
 				if (toupper(i) == 'Y')
 				{
@@ -246,7 +246,7 @@ int main()
 				printf("Do you REALY want to format ALL files on your USB?\n[y]es/[n]o\n");
 
 				char i;
-				scanf("%c", &i);
+				scanf(" %c", &i);
 
 				if (toupper(i) == 'Y')
 				{
