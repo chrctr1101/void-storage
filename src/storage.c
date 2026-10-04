@@ -58,7 +58,7 @@ bool do_umount()
 
 void out()
 {
-	printf("Choose action\n\n[1] - Copy from USB\n[2] - Move from USB\n[3] - Copy to USB\n[4] - Move to USB\n[5] - Delete local storage directory\n[6] - Format USB\n[7] - Rename local storage directory\n[0] - Quit programm\n\n");
+	printf("Choose action\n\n[1] - Copy from USB\n[2] - Move from USB\n[3] - Copy to USB\n[4] - Move to USB\n[5] - Delete local storage directory\n[6] - Format USB\n[7] - Rename local storage directory\n[8] - Show files in USB\n[9] - Show files in local storage\n[0] - Quit programm\n\n");
 }
 
 int main()
@@ -297,6 +297,16 @@ int main()
 					printf("Something went wrong\n");
 				}
 
+				break;
+			}
+			case(8):
+			{
+				system("ls /mnt");
+				break;
+			}
+			case(9):
+			{
+				system("ls ~/storage");
 				break;
 			}
 			case(0):
