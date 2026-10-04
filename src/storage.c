@@ -251,7 +251,7 @@ int main()
 				if (toupper(i) == 'Y')
 				{
 					printf("Formating...\n");
-					system("sudo rm -r /mnt/*");
+					system("sudo rm -rf /mnt/*");
 
 					printf("Your USB device was formated successfuly\n");
 				}
@@ -269,14 +269,14 @@ int main()
 			case(7): // Rename directory
 			{
 				system(stor);
-				printf("Select directoy to RENAME\n\n");
+				printf("Select directory to RENAME\n\n");
 
 				char name[65];
 				scanf("%s", name);
 
 				char rn[131] = "mv ";
 				char new_name[65];
-				char space[2] = " ";
+				char space[3] = "/ ";
 
 				printf("Enter new directory NAME\n\n");
 				scanf("%s", new_name);
@@ -284,6 +284,7 @@ int main()
 				strcat(rn, name);
 				strcat(rn, space);
 				strcat(rn, new_name);
+				strcat(rn, space);
 
 				int done = system(rn);
 
