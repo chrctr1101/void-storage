@@ -202,7 +202,7 @@ int main()
 				scanf("%s", name);
 
 				char mv [100] = "sudo mv ~/storage/";
-				char res [6] = "* /mnt";
+				char res [6] = " /mnt";
 
 				strcat(mv, name);
 				strcat(mv, res);
@@ -276,7 +276,7 @@ int main()
 
 				char rn[131] = "mv ";
 				char new_name[65];
-				char space[3] = "/ ";
+				char space[2] = " ";
 
 				printf("Enter new directory NAME\n\n");
 				scanf("%s", new_name);
@@ -284,7 +284,6 @@ int main()
 				strcat(rn, name);
 				strcat(rn, space);
 				strcat(rn, new_name);
-				strcat(rn, space);
 
 				int done = system(rn);
 
