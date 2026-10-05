@@ -14,4 +14,4 @@ You can copy/move ALL data from USB device
 
 If you have any questions or you found errors and issues, give me a notification on GitHub
 
-~chrctr1101~
+chrctr1101
